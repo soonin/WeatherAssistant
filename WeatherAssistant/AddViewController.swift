@@ -59,32 +59,21 @@ class AddViewController: UIViewController , MKMapViewDelegate {
         longPressRecogniser.minimumPressDuration = 0.5
         mapView.addGestureRecognizer(longPressRecogniser)
         
-        //        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-        //        gestureRecognizer.delegate = self as? UIGestureRecognizerDelegate
-        //        mapView.addGestureRecognizer(gestureRecognizer)
-        
-        
-        // 1)
         mapView.mapType = MKMapType.standard
         
-        // 2)
         let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(keyLat.toFloat()),longitude: CLLocationDegrees(keyLon.toFloat()))
         
-        // 3)
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: location, span: span)
         mapView.setRegion(region, animated: true)
         
-        // 4)
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
         annotation.title = "iOSDevCenter-Kirit Modi"
         annotation.subtitle = "Timeframe"
         mapView.addAnnotation(annotation)
         
-        
         self.updateBoard(latVal: keyLat, lonval: keyLon)
-        
 }
     
     
@@ -144,7 +133,7 @@ func updateBoard(latVal : String , lonval : String)  {
         self.detailsView.text = detailsText
     }
 
-    }
+}
    
     
     // add to bookmarks and exit

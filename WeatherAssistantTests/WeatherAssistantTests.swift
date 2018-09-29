@@ -30,6 +30,13 @@ class WeatherAssistantTests: XCTestCase {
     var bookmarkedTools = BookmarkedTools()
     var knownTools = KnownTools()
     var settingsMem = DefaultsSettings()
+    var api = ApiJson()
+    
+    // initial Value for Setting
+    var collectionSource : String = "Bookmarked"
+    var seacrhMethod : String = "def"
+    var unitsInit : String = "metric"
+    
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -53,5 +60,53 @@ class WeatherAssistantTests: XCTestCase {
         XCTAssert(result != 0)
     }
     
+    
+    func testsaveSettingsAndloadSettings()  {
+        let valuetosave : String = "This is a test case for testing saveSettings and loadSettings functions!"
+        let keyForSave : String = "myTestKey"
+        settingsMem.saveSettings(keyName: keyForSave, keyValue: valuetosave)
+        let savedValue = settingsMem.loadSettings(keyName: keyForSave)
+        print(savedValue)
+        XCTAssert(valuetosave == savedValue)
+    }
+    
+    
+    func testgetForecastViaJsonWithURL()  {
+        api.lat = keyLat.toFloat()
+        api.lon = keyLon.toFloat()
+        api.requestType = "forecast"
+        api.units = unitsInit
+        let forecast = api.getForecastViaJsonWithURL()
+        XCTAssert(forecast.city.name == "East Palo Alto")
+    }
+    
+    func testgetForecastViaJsonWithURLFORforecast()  {
+        api.lat = keyLat.toFloat()
+        api.lon = keyLon.toFloat()
+        api.requestType = "forecast"
+        api.units = unitsInit
+        let forecast : ForecastModel = api.getModelViaJsonWithURL()
+        XCTAssert(forecast.city.name == "East Palo Alto")
+    }
+    
+    
+    func testgetWeatherViaJsonWithURL()  {
+        api.lat = keyLat.toFloat()
+        api.lon = keyLon.toFloat()
+        api.requestType = "weather"
+        api.units = unitsInit
+        let weather = api.getWeatherViaJsonWithURL()
+        XCTAssert(weather.name == "East Palo Alto")
+    }
+    
+    func testgetModelViaJsonWithURLFORweather()  {
+        api.lat = keyLat.toFloat()
+        api.lon = keyLon.toFloat()
+        api.requestType = "weather"
+        api.units = unitsInit
+        let weather : WeatherModel = api.getModelViaJsonWithURL()
+        XCTAssert(weather.name == "East Palo Alto")
+    }
+
     
 }

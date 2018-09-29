@@ -46,8 +46,6 @@ class SettingViewController: UIViewController {
         updateUnitsSegmentedControl(selectedSeg: unitsInit)
         seacrhMethod = settingsMem.checkSettingsStat(keyName: "seacrhMethod", newKeyValue: seacrhMethod)
         updateSearchSegmentedControl(selectedSeg: seacrhMethod)
-
-        
         
         navigationItem.title = "Settings page"
         
@@ -60,12 +58,10 @@ class SettingViewController: UIViewController {
     }
     
 
-
     @IBAction func resetBookmarksAct(_ sender: UIButton) {
         bookmarkedTools.deleteAllData()
         
     }
-    
     
     @IBAction func resetKnownAct(_ sender: UIButton) {
         knownTools.deleteAllData()
