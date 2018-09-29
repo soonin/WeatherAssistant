@@ -27,7 +27,6 @@ extension ViewController : DataCollectionProtocol {
     func passData(index: Int) {
         
         let vc =  storyboard?.instantiateViewController(withIdentifier: "CityScreen") as? CityScreenViewController
-        
         if (collectionSource == "Bookmarked") {
             vc?.keyLocationName = bookmarkedArray[index].locationName!
             vc?.keyLat = bookmarkedArray[index].lat!
