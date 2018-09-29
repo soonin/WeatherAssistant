@@ -136,7 +136,7 @@ func updateBoard(latVal : String , lonval : String)  {
 }
    
     
-    // add to bookmarks and exit
+    // add to bookmarks and exit 
     @IBAction func addToBookmarkedAct(_ sender: UIButton) {
         let doneTask = bookmarkedTools.saveDataToEntity(locationName: keyLocationName, lat: keyLat, lon: keyLon)
         

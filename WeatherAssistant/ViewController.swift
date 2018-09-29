@@ -44,7 +44,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var settingsMem = DefaultsSettings()
     
     // initial Value for Setting
-    var collectionSource : String = "Bookmarked"
+    var collectionSource : String = "Known"
     var seacrhMethod : String = "def"
     var unitsInit : String = "metric"
     
@@ -108,11 +108,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             collectionView.reloadData()
             break
         default:
-            collectionSource = "Bookmarked"
-            settingsMem.saveSettings(keyName: "collectionSource", keyValue: "Bookmarked")
+            collectionSource = "Known"
+            settingsMem.saveSettings(keyName: "collectionSource", keyValue: "Known")
             collectionView.reloadData()
             break
         }
+        
     }
     
     
