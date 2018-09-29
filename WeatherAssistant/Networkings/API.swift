@@ -11,11 +11,9 @@ import Foundation
 
 class ApiJson {
     
-    
     // sample URLs from Assignment
     //    final let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=0&lon=0&appid=c6e381d8c7ff98f0fee43775817cf6ad&units=metric"
     //    final let urlString1 = "https://api.openweathermap.org/data/2.5/forecast?lat=0&lon=0&appid=c6e381d8c7ff98f0fee43775817cf6ad&units=metric
-    
     
     let apiURL = "https://api.openweathermap.org/data/2.5/"
     let apiToken : String = ""
