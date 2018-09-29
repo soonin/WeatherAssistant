@@ -15,7 +15,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var keyLat = "37.47"
     var keyLon = "-122.14"
     
-    // collection view to show list of Bookmarked / Knwon locations
+    // collection view to show list of Bookmarked / Known locations
     // tableView was another option but Assignment asked for CollectionView 
     @IBOutlet weak var collectionView : UICollectionView!
     //Home page Tools Connections
@@ -56,11 +56,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         unitsInit = settingsMem.checkSettingsStat(keyName: "unitsInit", newKeyValue: unitsInit)
         seacrhMethod = settingsMem.checkSettingsStat(keyName: "seacrhMethod", newKeyValue: seacrhMethod)
         updatesegmentedControl(selectedSeg: collectionSource)
-        serchBtn.layer.cornerRadius = 5
 
         //Customize Navigation
         navigationMaker()
-        
+        serchBtn.layer.cornerRadius = 5
+
         // delegate and dataSource
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -71,7 +71,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if settingsMem.loadSettings(keyName: "preloadKnown") == "yes" {
             print("Known pre value already loaed")
         } else {
-            //let dataVersion = plistHelepr.readPlist(namePlist: "KnownLocations", key: "locations")
             let numberOfPreLoad = knownTools.preLoadFromPlist(forResource: "KnownLocations", ofType: "plist")
             print("number of preloaded  \(numberOfPreLoad)")
             if (numberOfPreLoad > 0) {
@@ -84,9 +83,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         knownArray =  knownTools.fetchData()
         
         collectionView.reloadData()
-        
     }
 
+    
     override func viewDidAppear(_ animated: Bool) {
         // fetch data to arrays
         bookmarkedArray = bookmarkedTools.fetchData()
@@ -116,20 +115,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
+    
     func updatesegmentedControl(selectedSeg : String) {
-        switch selectedSeg {
-        case "Bookmarked":
-            collectionSourceSeg.selectedSegmentIndex = 0
-            break
-        case "Known":
-            collectionSourceSeg.selectedSegmentIndex = 1
-            break
-        default:
-            collectionSourceSeg.selectedSegmentIndex = 0
-            break
+            switch selectedSeg {
+            case "Bookmarked":
+                collectionSourceSeg.selectedSegmentIndex = 0
+                break
+            case "Known":
+                collectionSourceSeg.selectedSegmentIndex = 1
+                break
+            default:
+                collectionSourceSeg.selectedSegmentIndex = 0
+                break
+        }
     }
     
-    }
     
     @IBAction func addAct(_ sender: UIBarButtonItem) {
         
@@ -137,21 +137,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         vc?.keyLat = keyLat
         vc?.keyLon = keyLon
         self.navigationController?.pushViewController(vc!, animated: true)
-        
     }
+    
     
     @IBAction func searchTextFieldAct(_ sender: UITextField) {
         let searchforVal = searchForString!.text
-        print(searchforVal)
         knownArray = knownTools.searchInEntity(searchString: searchforVal!, searchType : seacrhMethod)
         bookmarkedArray = bookmarkedTools.searchInEntity(searchString: searchforVal!, searchType : seacrhMethod)
         print(knownArray)
         collectionView.reloadData()
     }
     
+    
     @IBAction func searchAct(_ sender: UIButton) {
         let searchforVal = searchForString!.text
-        print(searchforVal)
         if (searchforVal == "" ) {
             bookmarkedArray = bookmarkedTools.fetchData()
             knownArray =  knownTools.fetchData()
@@ -176,15 +175,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.collectionView.reloadData()
     }
     
+    
     // UICollectionViewDelegate, UICollectionViewDataSource functions
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let numberOfItems = (collectionSource == "Bookmarked") ?  bookmarkedArray.count : knownArray.count
         return numberOfItems
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -241,8 +243,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return cell
     }
     
+    
     @objc func tap(_ sender: UITapGestureRecognizer) {
-        
         let location = sender.location(in: self.collectionView)
         let indexPath = self.collectionView.indexPathForItem(at: location)
         
@@ -252,34 +254,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.passData(index: indexPath!.item)
     }
     
-    
-//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        
-//        //self.passData(index: indexPath.item)
-//    }
 
-    
-    
     func navigationMaker()  {
         let nav = self.navigationController?.navigationBar
-        
         nav?.barStyle = UIBarStyle.black
         nav?.tintColor = UIColor.yellow
         navigationItem.title = "Weather Assistant"
-        
-//        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-//        imageView.contentMode = .scaleAspectFit
-//
-//        let image = UIImage(named: "weather-logo")
-//        imageView.image = image
-//        navigationItem.titleView = imageView
-
     }
     
-
-
-    
-}
+} //end of ViewController
 
 
 
