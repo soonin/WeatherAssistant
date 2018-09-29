@@ -8,6 +8,7 @@
 
 import Foundation
 
+// DaysInfo Struct for simplifying "Forecast" for tableview 
 struct DaysInfo {
     var dt : TimeInterval
     var dt_txt : String

@@ -9,18 +9,15 @@
 import UIKit
 
 
+// Extend String with Two functions for converting Float and Double to string
 extension String {
     func toDouble() -> Double? {
         return NumberFormatter().number(from: self)?.doubleValue
     }
-//    func toFloat() -> Float? {
-//        return NumberFormatter().number(from: self)?.floatValue
-//    }
     func toFloat() -> Float {
         return (self as NSString).floatValue
     }
 }
-
 
 
 // data collection protocol for ViewController
@@ -55,6 +52,7 @@ extension ViewController : DataCollectionProtocol {
         collectionView.reloadData()
     }
 }//end of extension  UIButton
+
 
 // data collection protocol for ViewController
 extension UIViewController  {
@@ -137,7 +135,6 @@ extension UIColor {
             alpha : alpha
         )
     }
-    
 }//end of extension  UIColor
 
 

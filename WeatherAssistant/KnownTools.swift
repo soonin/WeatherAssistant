@@ -13,7 +13,6 @@ class KnownTools {
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    
     // pre-load data from plist for Known locations
     func preLoadFromPlist(forResource: String, ofType: String) -> Int {
         var preLoadcounter : Int = 0
@@ -115,8 +114,6 @@ class KnownTools {
     } // End of searchInEntity(searchString: String, searchType : String = "")
     
     
-    
-    
     //MARK: Convert to Generic
     // feach all Entity Data to array
     func fetchData() -> [KnownEntity] {
@@ -132,7 +129,6 @@ class KnownTools {
         }
         return outputArray
     } // End of fetchData()
-    
     
     
     

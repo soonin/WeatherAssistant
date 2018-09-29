@@ -13,9 +13,6 @@ class BookmarkedTools {
     
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    
-    
-    
     // Save new record inside Entity with value >> locationName: String, lat: String, lon: String
     func saveDataToEntity(locationName: String, lat: String, lon: String) -> Bool {
         var saveDone = false
@@ -80,8 +77,6 @@ class BookmarkedTools {
     } // End of searchInEntity(searchString: String, searchType : String = "")
     
     
-    
-    
     //MARK: Convert to Generic
     // feach all Entity Data to array
     func fetchData() -> [BookmarkedEntity] {
@@ -97,8 +92,6 @@ class BookmarkedTools {
         }
         return outputArray
     } // End of fetchData()
-    
-    
     
     
     //MARK: Convert to Generic
@@ -131,5 +124,3 @@ class BookmarkedTools {
     }
     
 } // end of  class BookmarkedTools
-
-
