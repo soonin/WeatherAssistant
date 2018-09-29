@@ -1,9 +1,26 @@
 # IOS - Swift - WeatherAssistant
 Weather, everybody wants to know how it is going to be during the week. Will it be rainy, windy,or sunny? help us to find weather status as quick as possible.
 
+##  How yo use This app:
+
+**● ADD NEW LOCATION or CITY :**  
+
+○ TAP on top left corner of the screen **+**
+
+○ Long TAP on the map where ever you like an annotation flag 
+
+○ You will get  slsected flag you information
+
+○ Now just tap on button "Add to bookmarks" to have this location in your bookmarks list
+
+○ You will direct to home page after 
+
+
+
 ##  The basic info of the Weather Assistant app:
 
 App contains the following screens:
+
 ● Home screen:
 
 ○ Showing a list of locations that the user has bookmarked previously.
@@ -12,6 +29,7 @@ App contains the following screens:
 
 ● City screen: once the user clicks on a bookmarked city this screen will appear. On this
 screen the user should be able to see:
+
 ○ Today’s forecast, including: temperature, humidity, rain chances and wind
 information
 
