@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BookmarkedEntity" representedClassName="BookmarkedEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="lat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="KnownEntity" representedClassName="KnownEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="lat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BookmarkedEntity" positionX="-45" positionY="0" width="128" height="90"/>
+        <element name="KnownEntity" positionX="-9" positionY="63" width="128" height="90"/>
+    </elements>
+</model>
