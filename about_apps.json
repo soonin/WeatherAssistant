@@ -1,7 +1,7 @@
 {
     "name": "Lets Build That App",
     "description": "Teaching and Building Apps since 1999",
-    "courses": [
+    "apps": [
                 {
                 "key": 1,
                 "appname": "Learn Numbers",
