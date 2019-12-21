@@ -1,0 +1,28 @@
+{
+    "name": "Lets Build That App",
+    "description": "Teaching and Building Apps since 1999",
+    "courses": [
+                {
+                "key": 1,
+                "appname": "Learn Numbers",
+                "appicon": "https://www.letsbuildthatapp.com/course/instagram-firebase",
+                "titel": "NNAA",
+                "subtitle": "NNAA",
+                "teamlink": "Instagram Firebase",
+                "price": "Free",
+                "description": "Instagram Firebase",
+                "website": "https://www.centurytrail.com",
+                },
+                {
+                "key": 2,
+                "appname": "Learn Multipication Table",
+                "appicon": "https://www.letsbuildthatapp.com/course/instagram-firebase",
+                "titel": "NNAA",
+                "subtitle": "NNAA",
+                "teamlink": "Instagram Firebase",
+                "price": "Free",
+                "description": "Instagram Firebase",
+                "website": "https://www.centurytrail.com",
+                }
+                ]
+}
