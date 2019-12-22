@@ -1,5 +1,8 @@
 {
-    "name": "Lets Build That App",
+    "name": "CenturyTrail",
+    "title": "Century Trail",
+    "subtitle": "iOS App development",
+    "iconurl": "https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/54/fa/87/54fa87a5-6c46-9742-a5c6-77bed33ffb10/AppIcon-1x_U007emarketing-85-220-3.png/230x0w.png",
     "description": "Teaching and Building Apps since 1999",
     "apps": [
                 {
